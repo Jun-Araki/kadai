@@ -5,29 +5,31 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  puts names.unshift(-4, "齋藤")
+  # puts names.<< "齋藤"
+  # puts names
 end
 
 def q2
   array1 = ["dog", "cat", "fish"]
   array2 = ["bird", "bat", "tiger"]
+  puts array1 + array2
 
   # 以下に回答を記載
-
 end
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
+  puts numbers.count(3)
 
   # 以下に回答を記載
-
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-
+  sports.delete(nil)
   # 以下は変更しないで下さい
   p sports
 end
@@ -37,29 +39,41 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-
+  puts array1.empty?
+  puts array2.empty?
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+  # numbers1.each do |i|
+  #   puts i * 10
+  # end
+  numbers2 = numbers1.map { |i| i * 10 }
+  puts numbers2
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
+  # array.each do |num|
+  #   num.to_i
+  # end
+  array.map!(&:to_i)
 
   # 以下は変更しないで下さい
   p array
 end
 
 def q8
-  programming_languages = %w(ruby php python javascript)
+  programming_languages = %w[ruby php python javascript]
 
   # 以下に回答を記載
+  # programming_languages.map { |i| i.capitalize }
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
 
   # 以下は変更しないで下さい
   p programming_languages
@@ -70,28 +84,43 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  names.each.with_index(1) do |name, i|
+    puts "会員No.#{i} #{name}さん"
+  end
 end
 
 def q10
-  foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
+  foods = %w[いか たこ うに しゃけ うにぎり うに軍艦 うに丼]
 
   # 以下に回答を記載
+  foods.each do |food|
+    str = if food.include?("うに")
+            ":好物です"
+          else
+            ":まあまあ好きです"
+          end
 
+    puts food + str
+  end
+  # foods.each do |food|
+  #   if food.include?("うに")
+  #     puts "#{food}:好物です"
+  #   else
+  #     puts "#{food}:まあまあ好きです"
+  #   end
+  # end
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
 end
 
 def q13
@@ -99,14 +128,12 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
 end
 
 def q15
@@ -114,7 +141,6 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
 end
 
 def q16
@@ -126,12 +152,10 @@ def q16
   ]
 
   # 以下に回答を記載
-
 end
 
 class UserQ17
   # 以下に回答を記載
-
 end
 
 def q17
@@ -146,7 +170,6 @@ end
 
 class UserQ18
   # 以下に回答を記載
-
 end
 
 def q18
@@ -174,14 +197,11 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
 end
 
 class Zoo
   # 以下に回答を記載
-
 end
-
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
