@@ -200,6 +200,20 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  attr_reader :name, :age
+
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
+
+  def introduce
+    if age >= 20
+      "こんにちは。#{name}と申します。よろしくお願いします。"
+    else
+      "はいさいまいど〜。#{name}です"
+    end
+  end
 end
 
 def q18
