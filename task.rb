@@ -175,6 +175,17 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  attr_reader :name, :age, :gender
+
+  def initialize(name:, age:, gender:)
+    @name = name
+    @age = age
+    @gender = gender
+  end
+
+  def info
+    puts name, age, gender
+  end
 end
 
 def q17
